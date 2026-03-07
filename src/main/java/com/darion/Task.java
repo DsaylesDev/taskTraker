@@ -1,0 +1,56 @@
+package com.darion;
+
+public class Task {
+
+    private int id;
+    private String description;
+    private String status;
+    private String createdAt;
+    private String updatedAt;
+
+    public Task(int id, String name, String status, String createdAt, String updatedAt) {
+        this.id = id;
+        this.description = description;
+        this.status = status;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public String toJson() {
+        return "{" +
+                "\"id\":" + id + "," +
+                "\"description\":\"" + description + "\"," +
+                "\"status\":\"" + status + "\"," +
+                "\"createdAt\":\"" + createdAt + "\"," +
+                "\"updatedAt\":\"" + updatedAt + "\"" +
+                "}";
+    }
+
+    @Override
+    public String toString() {
+        return "[" +  id + "] " + description +
+                " | Status: " + status +
+                " | Created: " + createdAt +
+                " | Updated: " + updatedAt;
+    }
+}
