@@ -8,7 +8,7 @@ public class Task {
     private String createdAt;
     private String updatedAt;
 
-    public Task(int id, String name, String status, String createdAt, String updatedAt) {
+    public Task(int id, String description, String status, String createdAt, String updatedAt) {
         this.id = id;
         this.description = description;
         this.status = status;
@@ -36,6 +36,18 @@ public class Task {
         return updatedAt;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     public String toJson() {
         return "{" +
                 "\"id\":" + id + "," +
@@ -48,7 +60,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "[" +  id + "] " + description +
+        return "[" + id + "] " + description +
                 " | Status: " + status +
                 " | Created: " + createdAt +
                 " | Updated: " + updatedAt;
